@@ -15,7 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $data = Post::all();
+
+        return view('Post/post', compact('posts', 'data'));
     }
 
     /**
@@ -47,7 +49,9 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        $data = Post::find($post->id);
+
+        return view('Post/detail', compact('post', 'data'));
     }
 
     /**
